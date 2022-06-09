@@ -13,14 +13,14 @@ const tutorials = [
 
 const titleCased = () => {
   const newTutorials = [];
-  for(const item of tutorials){
-      const arr = item.split(" ");
-      for(let i = 0; i < arr.length; i++){
-          arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
-      }
-      const arr2 = arr.join(" ");
-      newTutorials.push(arr2)
-  }
+  tutorials.map(item => {
+   const arr = item.split(" ");
+   for(let i = 0; i < arr.length; i++){
+       arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
+   }
+  
+   const arr2 = arr.join(" ");
+   newTutorials.push(arr2)
+  })
   return newTutorials;
  }
- console.log(titleCased())
